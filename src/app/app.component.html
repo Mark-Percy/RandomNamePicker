@@ -11,11 +11,6 @@
       </mat-form-field>
       <button mat-raised-button color="primary">Add Person</button>
     </form>
-    <div *ngFor="let person of people$ | async">
-      <ul>
-        <li>{{person.fName}} {{person.sName}}</li>
-      </ul>
-    </div>
   </section>
   <section>
     <button (click)="pickRandom()" mat-raised-button color="primary">Select Random</button>
@@ -25,3 +20,10 @@
     </div>
   </section>
 </main>
+<mat-grid-list cols="6">
+    <mat-grid-tile *ngFor="let person of people$ | async">
+      <mat-card>
+        {{person.fName}} {{person.sName}} <button mat-icon-button (click)="delete(person.id)" color="warn"><mat-icon>delete</mat-icon></button>
+      </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

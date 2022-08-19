@@ -32,7 +32,6 @@ export class AppComponent {
     })
   }
   pickRandom() {
-    console.log(this.NumberRan)
     if(this.people) {
       if(this.NumberRan == 1) {
         this.selectedName = this.people[0]
@@ -42,6 +41,9 @@ export class AppComponent {
 
     }
     this.NumberRan += 1;
+  }
 
+  delete(id: string | undefined) {
+    this.storageService.deletePerson(id)
   }
 }

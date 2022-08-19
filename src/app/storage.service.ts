@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {addDoc, collectionData, CollectionReference, Firestore, getDocs} from '@angular/fire/firestore'
+import {addDoc, collectionData, CollectionReference, deleteDoc, doc, Firestore, getDocs} from '@angular/fire/firestore'
 import { collection } from '@firebase/firestore';
 import { Observable } from 'rxjs';
 import { People } from './people.interface';
@@ -9,8 +9,8 @@ import { People } from './people.interface';
 })
 export class StorageService {
   collection: CollectionReference;
-  constructor(private sf: Firestore) { 
-    this.collection = collection(this.sf, 'people');
+  constructor(private fs: Firestore) { 
+    this.collection = collection(this.fs, 'people');
   }
 
   addPerson(people: People){
@@ -18,5 +18,12 @@ export class StorageService {
   }
   getPeople(): Observable<People[]>{
     return collectionData(this.collection, {idField:'id'}) as Observable<People[]>;
+  }
+  deletePeople() {
+   
+  }
+  deletePerson(id: string | undefined) {
+    const personDocumentReference = doc(this.fs, `people/${id}`);
+    return deleteDoc(personDocumentReference);
   }
 }
