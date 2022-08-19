@@ -1,0 +1,16 @@
+main{
+    width: 100vw;
+    display: flex;
+    margin-top: 5vh;
+    justify-content: space-evenly;
+}
+section{
+    width: 100%;
+    margin: 5vw 5vh
+}
+form label{
+    display: block;
+}
+mat-form-field{
+    width: 100%;
+}

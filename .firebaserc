@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "randomnamegenerator-ef56a": {
+      "hosting": {
+        "RandomNamePicker": [
+          "randomnamegenerator-ef56a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "randomnamegenerator-ef56a"
+  }
+}
