@@ -14,3 +14,11 @@ form label{
 mat-form-field{
     width: 100%;
 }
+#people{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+#people mat-card {
+    margin: 5px;
+}

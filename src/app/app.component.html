@@ -20,10 +20,10 @@
     </div>
   </section>
 </main>
-<mat-grid-list cols="6">
-    <mat-grid-tile *ngFor="let person of people$ | async">
-      <mat-card>
+<div  id="people">
+  <mat-card *ngFor="let person of people$ | async">
+      <mat-card-content>
         {{person.fName}} {{person.sName}} <button mat-icon-button (click)="delete(person.id)" color="warn"><mat-icon>delete</mat-icon></button>
-      </mat-card>
-    </mat-grid-tile>
-</mat-grid-list>
+      </mat-card-content>
+    </mat-card>
+</div>
